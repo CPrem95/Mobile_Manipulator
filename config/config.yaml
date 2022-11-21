@@ -1,0 +1,43 @@
+#simple_model is the name space
+simple_model:
+    # based on https://wiki.ros.org/ros_control this controller reads the state 
+    # of all the joints
+    joint_state_controller:
+        type: joint_state_controller/JointStateController
+        publish_rate: 20
+
+    shoul_J_position_controller:
+        #this controller recieves position and via PID it takes care of the effort
+        # needed to move the joint. based on https://wiki.ros.org/ros_control
+        #type: position_controllers/JointPositionController
+        #type: velocity_controllers/JointVelocityController
+        type: velocity_controllers/JointPositionController
+        joint: shoul_J
+        pid: {p: 1.0, i: 0.01, d: 0.0}
+
+    elbow_J_position_controller:
+        #this controller recieves position and via PID it takes care of the effort
+        # needed to move the joint. based on https://wiki.ros.org/ros_control
+        #type: position_controllers/JointPositionController
+        #type: velocity_controllers/JointVelocityController
+        type: velocity_controllers/JointPositionController
+        joint: elbow_J
+        pid: {p: 1.0, i: 0.01, d: 0.0}
+
+    shaft_PJ_position_controller:
+        #this controller recieves position and via PID it takes care of the effort
+        # needed to move the joint. based on https://wiki.ros.org/ros_control
+        #type: position_controllers/JointPositionController
+        #type: velocity_controllers/JointVelocityController
+        type: velocity_controllers/JointPositionController
+        joint: shaft_PJ
+        pid: {p: 1.0, i: 0.0, d: 0.0}
+
+    shaft_RJ_position_controller:
+        #this controller recieves position and via PID it takes care of the effort
+        # needed to move the joint. based on https://wiki.ros.org/ros_control
+        #type: position_controllers/JointPositionController
+        #type: velocity_controllers/JointVelocityController
+        type: velocity_controllers/JointPositionController
+        joint: shaft_RJ
+        pid: {p: 1.0, i: 0.0, d: 0.0}

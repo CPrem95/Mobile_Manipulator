@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="env_mobile_manip">
+  <link name="world"/>
+  <joint name="fixed" type="fixed">
+    <origin
+      xyz="0 0 0.01"
+      rpy="0 0 0" />
+    <parent link="world"/>
+    <child link="origin"/>
+  </joint>
+  <link
+    name="origin">
+    <inertial>
+      <origin
+        xyz="-2.29621274840129E-19 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.00418879020478639" />
+      <inertia
+        ixx="1.67551608191456E-07"
+        ixy="0"
+        ixz="0"
+        iyy="1.67551608191456E-07"
+        iyz="0"
+        izz="1.67551608191456E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://env_mobile_manip/meshes/origin.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://env_mobile_manip/meshes/origin.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="finish">
+    <inertial>
+      <origin
+        xyz="0 -0.00419737740837644 -8.88178419700125E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.0097853981633977" />
+      <inertia
+        ixx="1.23368975646237E-06"
+        ixy="3.27752393380683E-22"
+        ixz="-1.96778512908122E-21"
+        iyy="2.15981747704254E-06"
+        iyz="-1.49023412421152E-22"
+        izz="1.23368975646236E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://env_mobile_manip/meshes/finish.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://env_mobile_manip/meshes/finish.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="finish_j"
+    type="fixed">
+    <origin
+      xyz="2 4.5 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="origin" />
+    <child
+      link="finish" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="end">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.00418879020478639" />
+      <inertia
+        ixx="1.67551608191456E-07"
+        ixy="0"
+        ixz="0"
+        iyy="1.67551608191456E-07"
+        iyz="0"
+        izz="1.67551608191456E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://env_mobile_manip/meshes/end.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://env_mobile_manip/meshes/end.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="end_j"
+    type="fixed">
+    <origin
+      xyz="-0.3 0.12 0"
+      rpy="0 0 0" />
+    <parent
+      link="finish" />
+    <child
+      link="end" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="start">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.00418879020478639" />
+      <inertia
+        ixx="1.67551608191456E-07"
+        ixy="0"
+        ixz="0"
+        iyy="1.67551608191456E-07"
+        iyz="0"
+        izz="1.67551608191456E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://env_mobile_manip/meshes/start.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://env_mobile_manip/meshes/start.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="start_j"
+    type="fixed">
+    <origin
+      xyz="0.475 0.15 -0.30311"
+      rpy="0 0 0" />
+    <parent
+      link="end" />
+    <child
+      link="start" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

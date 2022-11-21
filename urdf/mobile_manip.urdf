@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<!-- xyz="-2.41969739782871E-19 -0.0191018594248712 -0.0329317379359507"-->
+<robot
+  name="mobile_manip">
+  <link name="dummy">
+   </link>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-2.41969739782871E-19 -0.02 -0.0329317379359507"
+        rpy="0 0 0" />
+      <mass
+        value="5.5273815405995" />
+      <inertia
+        ixx="0.20560290907559"
+        ixy="-1.5113602757162E-17"
+        ixz="-6.06988124226446E-18"
+        iyy="0.125767777313915"
+        iyz="0.0148314696702359"
+        izz="0.288033147607211" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manip/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manip/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+   <joint name="dummy_joint" type="fixed">
+     <parent link="dummy"/>
+     <child link="base_link"/>
+   </joint>
+  <link
+    name="f_wheel_R">
+    <inertial>
+      <origin
+        xyz="0 1.11022302462516E-16 0.0890528324628364"
+        rpy="0 0 0" />
+      <mass
+        value="0.244357003587031" />
+      <inertia
+        ixx="0.000171588418782318"
+        ixy="1.6940658945086E-21"
+        ixz="-5.97059305247687E-20"
+        iyy="0.000171588418782318"
+        iyz="4.03653684712227E-20"
+        izz="0.000295030218137888" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manip/meshes/f_wheel_R.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manip/meshes/f_wheel_R.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="f_wheel_J_R"
+    type="continuous">
+    <origin
+      xyz="0.08 0.16 -0.17"
+      rpy="1.5707963267949 -1.54843652809113 1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="f_wheel_R" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="30"
+      velocity="5" />
+  </joint>
+  <link
+    name="f_wheel_L">
+    <inertial>
+      <origin
+        xyz="8.32667268468867E-17 5.55111512312578E-17 0.0890528324628365"
+        rpy="0 0 0" />
+      <mass
+        value="0.244357003587031" />
+      <inertia
+        ixx="0.000171588418782318"
+        ixy="-1.27054942088145E-21"
+        ixz="-3.4523232358371E-20"
+        iyy="0.000171588418782318"
+        iyz="4.44274079055922E-20"
+        izz="0.000295030218137888" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manip/meshes/f_wheel_L.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manip/meshes/f_wheel_L.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="f_wheel_J_L"
+    type="continuous">
+    <origin
+      xyz="-0.0799999999999999 0.16 -0.17"
+      rpy="1.5707963267949 0.0415388760057485 -1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="f_wheel_L" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="30"
+      velocity="5" />
+  </joint>
+  <link
+    name="link_1">
+    <inertial>
+      <origin
+        xyz="0.1 0.0125 5.02084334937759E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.633517687777566" />
+      <inertia
+        ixx="0.00056609765729542"
+        ixy="-2.04267009074416E-19"
+        ixz="-1.64204152262839E-18"
+        iyy="0.00448471409988967"
+        iyz="1.42007914466878E-19"
+        izz="0.00398460786840442" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manip/meshes/link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manip/meshes/link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shoul_J"
+    type="continuous">
+    <origin
+      xyz="0 0 0.145"
+      rpy="-1.5707963267949 3.1416 1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-2.618"
+      upper="2.618"
+      effort="30"
+      velocity="2" />
+  </joint>
+  <link
+    name="link_2">
+    <inertial>
+      <origin
+        xyz="0.0852635005561722 0.0396844550139392 1.02192256073492E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.68552127424881" />
+      <inertia
+        ixx="0.000491550374278397"
+        ixy="-0.000164568445492617"
+        ixz="-1.96890508893061E-19"
+        iyy="0.0048471033597257"
+        iyz="-9.01298259628136E-20"
+        izz="0.00450164228968607" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manip/meshes/link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manip/meshes/link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="elbow_J"
+    type="continuous">
+    <origin
+      xyz="0.2 0.00500000000000003 0"
+      rpy="0 0 0" />
+    <parent
+      link="link_1" />
+    <child
+      link="link_2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-2.618"
+      upper="2.618"
+      effort="30"
+      velocity="2" />
+  </joint>
+  <link
+    name="shaft_P">
+    <inertial>
+      <origin
+        xyz="-1.33226762955019E-15 0.208084878048781 1.97217202737557E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.201258279370596" />
+      <inertia
+        ixx="0.00279263580124955"
+        ixy="1.4967442935888E-17"
+        ixz="4.74257547431639E-33"
+        iyy="1.71664722010706E-05"
+        iyz="-8.81397027806147E-19"
+        izz="0.00279263580124955" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manip/meshes/shaft_P.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manip/meshes/shaft_P.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shaft_PJ"
+    type="prismatic">
+    <origin
+      xyz="0.2 -0.3 0"
+      rpy="0 0 0" />
+    <parent
+      link="link_2" />
+    <child
+      link="shaft_P" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0.4"
+      effort="30"
+      velocity="2" />
+  </joint>
+  <link
+    name="shaft_R">
+    <inertial>
+      <origin
+        xyz="1.73500672163726E-16 -0.000302900996612038 5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0518584073464101" />
+      <inertia
+        ixx="4.50989913747864E-06"
+        ixy="2.21361194499618E-20"
+        ixz="-3.06294620723412E-19"
+        iyy="5.81658370339871E-05"
+        iyz="5.35505609512498E-21"
+        izz="5.71036491374786E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manip/meshes/shaft_R.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manip/meshes/shaft_R.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shaft_RJ"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="3.1416 -1.5708 0" />
+    <parent
+      link="shaft_P" />
+    <child
+      link="shaft_R" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-3.1416"
+      upper="3.1416"
+      effort="30"
+      velocity="2" />
+  </joint>
+  <link
+    name="b_wheel_R">
+    <inertial>
+      <origin
+        xyz="-8.32667268468867E-17 -5.55111512312578E-17 0.0890528324628364"
+        rpy="0 0 0" />
+      <mass
+        value="0.244357003587031" />
+      <inertia
+        ixx="0.000171588418782318"
+        ixy="-1.01643953670516E-20"
+        ixz="-2.48055386540738E-21"
+        iyy="0.000171588418782318"
+        iyz="5.59825477059003E-20"
+        izz="0.000295030218137888" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manip/meshes/b_wheel_R.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manip/meshes/b_wheel_R.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="b_wheel_J_R"
+    type="continuous">
+    <origin
+      xyz="0.08 -0.16 -0.17"
+      rpy="-1.5708 -0.29853 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="b_wheel_R" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="30"
+      velocity="5" />
+  </joint>
+  <link
+    name="b_wheel_L">
+    <inertial>
+      <origin
+        xyz="-8.32667268468867E-17 8.32667268468867E-17 0.0890528324628365"
+        rpy="0 0 0" />
+      <mass
+        value="0.244357003587031" />
+      <inertia
+        ixx="0.000171588418782318"
+        ixy="2.11758236813575E-21"
+        ixz="-2.95593217358028E-20"
+        iyy="0.000171588418782318"
+        iyz="4.90932541835534E-20"
+        izz="0.000295030218137888" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manip/meshes/b_wheel_L.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile_manip/meshes/b_wheel_L.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="b_wheel_J_L"
+    type="continuous">
+    <origin
+      xyz="-0.0799999999999999 -0.16 -0.17"
+      rpy="1.5707963267949 0.0415388760057485 -1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="b_wheel_L" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="30"
+      velocity="5" />
+  </joint>
+  
+  <!-- ROS Control plugin for Gazebo -->
+  
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/simple_model</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+      <legacyModeNS>true</legacyModeNS>
+    </plugin>
+    <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+	    <updateRate>50</updateRate>
+	    <robotNamespace>/</robotNamespace>
+	    <leftFrontJoint>f_wheel_J_L</leftFrontJoint>
+	    <rightFrontJoint>f_wheel_J_R</rightFrontJoint>
+	    <leftRearJoint>b_wheel_J_L</leftRearJoint>
+	    <rightRearJoint>b_wheel_J_R</rightRearJoint>
+	    <wheelSeparation>0.24</wheelSeparation>
+	    <wheelDiameter>0.1</wheelDiameter>
+	    <robotBaseFrame>base_link</robotBaseFrame>
+	    <torque>20</torque>
+	    <topicName>cmd_vel</topicName>
+	    <broadcastTF>false</broadcastTF>
+   </plugin>
+   <plugin name="imu_plugin" filename="libgazebo_ros_imu.so">
+      <alwaysOn>true</alwaysOn>
+      <bodyName>base_link</bodyName>
+      <topicName>imu</topicName>
+      <serviceName>imu_service</serviceName>
+      <gaussianNoise>0.0</gaussianNoise>
+      <updateRate>20.0</updateRate>
+    </plugin>
+  </gazebo> 
+  <!-- transmissions -->
+  
+  <transmission name="shoul_J_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor1">
+      <!--<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface> -->
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint name="shoul_J">
+      <!-- <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface> -->
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint> 
+  </transmission>
+
+  <transmission name="elbow_J_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor2">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint name="elbow_J">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="shaft_RJ_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor3">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint name="shaft_RJ">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="shaft_PJ_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="motor4">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint name="shaft_PJ">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+</robot>

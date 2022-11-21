@@ -1,0 +1,49 @@
+<launch>
+  <include
+    file="$(find gazebo_ros)/launch/empty_world.launch" />
+  <node
+    name="tf_footprint_base"
+    pkg="tf"
+    type="static_transform_publisher"
+    args="0 0 0 0 0 0 base_link base_footprint 40" />
+    
+  <!--load urdf into parameter server-->  <!--different from generated urdf-->
+  <param name="robot_description" textfile="$(find mobile_manip)/urdf/mobile_manip.urdf" />
+  <node
+    name="spawn_model"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-urdf -model simple_model -param robot_description" 
+    output="screen" />
+
+  <node
+    name="env_model"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find env_mobile_manip)/urdf/env_mobile_manip.urdf -urdf -model env_mobile_manip"
+    output="screen" />
+  <!-- -->
+  <node
+    name="fake_joint_calibration"
+    pkg="rostopic"
+    type="rostopic"
+    args="pub /calibrated std_msgs/Bool true" />
+   
+   <!-- load the controllers -->
+   <rosparam file="$(find mobile_manip)/config/config.yaml" command="load"/>
+
+    <node name="controller_spawner" 
+        pkg ="controller_manager" 
+        type="spawner" 
+        ns="/simple_model" 
+        args="elbow_J_position_controller shoul_J_position_controller shaft_RJ_position_controller shaft_PJ_position_controller joint_state_controller"/>
+    
+    <!-- converts joint states to TF transforms -->
+    <node name="robot_state_publisher" 
+        pkg="robot_state_publisher" 
+        type="robot_state_publisher" 
+        respawn="false" 
+        output="screen">
+    	<remap from="joint_states" to="/simple_model/joint_states" />
+    </node>
+</launch>
